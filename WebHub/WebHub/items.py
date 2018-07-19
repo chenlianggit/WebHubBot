@@ -4,6 +4,7 @@ from scrapy import Item, Field
 
 
 class PornVideoItem(Item):
+    _id = Field()
     video_title = Field()
     image_url = Field()
     video_duration = Field()
