@@ -71,7 +71,8 @@ class Spider(CrawlSpider):
         phItem['link_url'] = link_url
         quality_480p = _ph_info_json.get('quality_480p')
         phItem['quality_480p'] = quality_480p
-        PornhubMongoDBPipeline.process_item(phItem)
+        Mongo = PornhubMongoDBPipeline()
+        Mongo.process_item(phItem)
         logging.info('duration:' + duration + ' title:' + title + ' image_url:'
                      + image_url + ' link_url:' + link_url)
         yield phItem
