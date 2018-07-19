@@ -50,7 +50,7 @@ class Spider(CrawlSpider):
                           callback=self.parse_ph_info)
         url_next = selector.xpath(
             '//a[@class="orangeButton" and text()="Next "]/@href').extract()
-        logging.debug(url_next)
+        # logging.debug(url_next)
         if url_next:
             # if self.test:
             logging.debug(' next page:---------->' + self.host + url_next[0])
@@ -62,8 +62,8 @@ class Spider(CrawlSpider):
         selector = Selector(response)
         # logging.info(selector)
         _ph_info = re.findall('var flashvars =(.*?),\n', selector.extract())
-        logging.debug('PH信息的JSON:')
-        logging.debug(_ph_info)
+        # logging.debug('PH信息的JSON:')
+        # logging.debug(_ph_info)
         _ph_info_json = json.loads(_ph_info[0])
         duration = _ph_info_json.get('video_duration')
         phItem['video_duration'] = duration
@@ -75,7 +75,7 @@ class Spider(CrawlSpider):
         phItem['link_url'] = link_url
         quality_480p = _ph_info_json.get('quality_480p')
         phItem['quality_480p'] = quality_480p
-        self.item_info.insert_one(phItem)
+        self.item_list.insert_one(phItem)
         logging.info('duration:' + duration + ' title:' + title + ' image_url:'
                      + image_url + ' link_url:' + link_url)
         yield phItem
