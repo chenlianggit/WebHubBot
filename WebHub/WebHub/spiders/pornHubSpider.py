@@ -13,9 +13,9 @@ import random
 
 
 class Spider(CrawlSpider):
-    client = pymongo.MongoClient('localhost', 27000)
-    db = client['PornHub']
-    item_list = db["PhRes"]
+    # client = pymongo.MongoClient('localhost', 27000)
+    # db = client['PornHub']
+    # item_list = db["PhRes"]
 
     name = 'pornHubSpider'
     host = 'https://www.pornhub.com'
@@ -75,7 +75,7 @@ class Spider(CrawlSpider):
         phItem['link_url'] = link_url
         quality_480p = _ph_info_json.get('quality_480p')
         phItem['quality_480p'] = quality_480p
-        self.item_list.insert_one(phItem)
+        # self.item_list.insert_one(phItem)
         logging.info('duration:' + duration + ' title:' + title + ' image_url:'
                      + image_url + ' link_url:' + link_url)
         yield phItem
