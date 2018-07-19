@@ -5,6 +5,7 @@ from scrapy.spiders import CrawlSpider
 from scrapy.selector import Selector
 from WebHub.items import PornVideoItem
 from WebHub.pornhub_type import PH_TYPES
+from WebHub.pipelines import process_item
 from scrapy.http import Request
 import re
 import json
@@ -70,6 +71,7 @@ class Spider(CrawlSpider):
         phItem['link_url'] = link_url
         quality_480p = _ph_info_json.get('quality_480p')
         phItem['quality_480p'] = quality_480p
+        process_item(phItem)
         logging.info('duration:' + duration + ' title:' + title + ' image_url:'
                      + image_url + ' link_url:' + link_url)
         yield phItem
