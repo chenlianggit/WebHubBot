@@ -2,7 +2,7 @@
 """归纳PornHub资源链接"""
 PH_TYPES = [
     '',
-    'recommended',
+    # 'recommended',
     # 'video?o=ht', # hot
     # 'video?o=mv', # Most Viewed
     # 'video?o=tr', # Top Rate
