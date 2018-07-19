@@ -1,11 +1,11 @@
 #coding:utf-8
 import requests
 import logging
+import pymongo
 from scrapy.spiders import CrawlSpider
 from scrapy.selector import Selector
 from WebHub.items import PornVideoItem
 from WebHub.pornhub_type import PH_TYPES
-from WebHub.pipelines import PornhubMongoDBPipeline
 from scrapy.http import Request
 import re
 import json
@@ -13,6 +13,10 @@ import random
 
 
 class Spider(CrawlSpider):
+    client = pymongo.MongoClient('localhost', 27000)
+    db = client['PornHub']
+    item_list = db["PhRes"]
+
     name = 'pornHubSpider'
     host = 'https://www.pornhub.com'
     start_urls = list(set(PH_TYPES))
@@ -71,8 +75,7 @@ class Spider(CrawlSpider):
         phItem['link_url'] = link_url
         quality_480p = _ph_info_json.get('quality_480p')
         phItem['quality_480p'] = quality_480p
-        Mongo = PornhubMongoDBPipeline()
-        Mongo.process_item(phItem)
+        self.item_info.insert_one(phItem)
         logging.info('duration:' + duration + ' title:' + title + ' image_url:'
                      + image_url + ' link_url:' + link_url)
         yield phItem
