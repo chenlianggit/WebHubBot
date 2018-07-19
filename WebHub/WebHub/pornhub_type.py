@@ -8,6 +8,6 @@ PH_TYPES = [
     'video?o=tr', # Top Rate
 
     # Examples of certain categories
-    # 'video?c=1',  # Category = Asian
-    # 'video?c=111',  # Category = Japanese
+    'video?c=1',  # Category = Asian
+    'video?c=111',  # Category = Japanese
 ]

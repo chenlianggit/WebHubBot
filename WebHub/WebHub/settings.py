@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for pornhub project
+# pornhub项目的Scrapy设置
 #
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
+# 为简单起见，此文件仅包含被视为重要的设置或
+# 常用。您可以在咨询文档时找到更多设置：
 #
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'WebHub.spiders'
 
 DOWNLOAD_DELAY = 1  # 间隔时间
 # LOG_LEVEL = 'INFO'  # 日志级别
-CONCURRENT_REQUESTS = 20  # 默认为16
+CONCURRENT_REQUESTS = 40  # 默认为16
 # CONCURRENT_ITEMS = 1
 # CONCURRENT_REQUESTS_PER_IP = 1
 REDIRECT_ENABLED = False
