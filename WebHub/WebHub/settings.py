@@ -30,12 +30,12 @@ DOWNLOADER_MIDDLEWARES = {
     "WebHub.middlewares.UserAgentMiddleware": 401,
     "WebHub.middlewares.CookiesMiddleware": 402,
 }
-# ITEM_PIPELINES = {
-#     "PornHub.pipelines.PornhubMongoDBPipeline": 403,
-# }
+ITEM_PIPELINES = {
+    "PornHub.pipelines.PornhubMongoDBPipeline": 403,
+}
 
-FEED_URI=u'/Users/xiyouMc/Documents/pornhub.csv'
-FEED_FORMAT='CSV'
+# FEED_URI=u'/Users/xiyouMc/Documents/pornhub.csv'
+# FEED_FORMAT='CSV'
 
 DEPTH_PRIORITY = 1
 SCHEDULER_DISK_QUEUE = 'scrapy.squeues.PickleFifoDiskQueue'
