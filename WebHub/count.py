@@ -4,7 +4,7 @@ import time
 
 client = pymongo.MongoClient('209.182.233.211', 27000)
 db = client['PornHub']
-item_list = db["PhRes"]
+item_list = db["PhResHot"]
 
 while True:
     # 实时监测URL条数
