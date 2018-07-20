@@ -14,7 +14,7 @@ class PornhubMongoDBPipeline(object):
     def __init__(self):
         clinet = pymongo.MongoClient("localhost", 27000)
         db = clinet["PornHub"]
-        self.PhRes = db["PhRes"]
+        self.PhRes = db["PhResHot"]
         idx = IndexModel([('link_url', ASCENDING)], unique=True)
         self.PhRes.create_indexes([idx])
         # if your existing DB has duplicate records, refer to:
