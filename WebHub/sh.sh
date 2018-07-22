@@ -14,7 +14,8 @@ do
     then
         end_time=$(date +%s)
         cost_time=$(($end_time - $begin_time))
-        echo "下载完成 耗时:$cost_time 秒 URL:  http://mp4.ty2050.com/$mp4.mp4"
+        echo "下载完成 耗时:$cost_time 秒"
+        echo "http://mp4.ty2050.com/$mp4.mp4"
         echo "success"
         exit
     else

@@ -24,9 +24,12 @@ def downmp4(url):
             return host
 
 
+
+
 for item in item_list.find():
     print(item['quality_480p'])
     print("----new 开始抓取----")
     url = item['quality_480p']
     host = downmp4(url)
-    item_list.update({"quality_480p": url}, {'$set': {"age": 20}})
+    time = int(time.time())
+    item_list.update({"quality_480p": url}, { '$set': {"local_mp4_url":host, "issave": 1, "updatetime":time} })
