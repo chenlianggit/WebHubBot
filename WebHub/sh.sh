@@ -3,13 +3,13 @@ begin_time=$(date +%s)
 process=you-get
 url=$1
 mp4="480P_$(date +%s)_$RANDOM"
-path= "/www/wwwroot/mp4.ty2050.com/Asian"
+path1=/www/wwwroot/mp4.ty2050.com/Asian
 
 for((i=1;i<=100;i++));
 do
-    $process -o $path -O $mp4  $url >  out.file  2>&1  &
+    $process -o $path1 -O $mp4  $url >  out.file  2>&1  &
     sleep 1
-    isdown=$(find ./ -name "$mp4.mp4")
+    isdown=$(find $path1 -name "$mp4.mp4")
     if [ $isdown ]
     then
         end_time=$(date +%s)
