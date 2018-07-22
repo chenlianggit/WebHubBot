@@ -77,7 +77,7 @@ class Spider(CrawlSpider):
         quality_480p = _ph_info_json.get('quality_480p')
         phItem['quality_480p'] = quality_480p
         phItem['issave']        = 0 #是否本地保存
-        phItem['createtime']    = time.time()
+        phItem['createtime']    = int(time.time())
         phItem['updatetime']    = 0
         phItem['local_mp4_url'] = ''
         print '成功抓取一条'
