@@ -21,12 +21,12 @@ def downmp4(url):
         if line == 'success':
             print("----成功抓取一条----")
         if host in line:
-            return host
+            return line
 
 
 
 
-for item in item_list.find():
+for item in item_list.find({'issave':0}):
     print(item['quality_480p'])
     print("----new 开始抓取----")
     url = item['quality_480p']
