@@ -16,14 +16,17 @@ def downmp4(url):
     x = p.readlines()
     for line in x:
         line = line.strip().replace("\n", "")  # 去空格去换行
+        host = "ty2050"
         print line
         if line == 'success':
             print("----成功抓取一条----")
+        if host in line:
+            return host
 
 
 for item in item_list.find():
     print(item['quality_480p'])
     print("----new 开始抓取----")
     url = item['quality_480p']
-    downmp4(url)
+    host = downmp4(url)
     item_list.update({"quality_480p": url}, {'$set': {"age": 20}})

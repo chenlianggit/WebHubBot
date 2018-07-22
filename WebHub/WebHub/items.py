@@ -15,3 +15,4 @@ class PornVideoItem(Item):
     createtime      = Field()
     issave          = Field()
     local_mp4_url   = Field()
+    updatetime      = Field()
