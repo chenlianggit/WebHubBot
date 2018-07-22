@@ -26,7 +26,7 @@ class PornhubMongoDBPipeline(object):
         if isinstance(item, PornVideoItem):
             print 'PornVideoItem True'
             try:
-                self.PhRes.update_one({'link_url': item['link_url']}, {'$set': dict(item)}, upsert=True)
+                self.PhRes.update_one({'link_url': item['link_url'],"issave":0}, {'$set': dict(item)}, upsert=True)
             except Exception:
                 pass
         return item
