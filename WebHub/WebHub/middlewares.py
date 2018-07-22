@@ -28,10 +28,10 @@ class CookiesMiddleware(object):
 
     def process_request(self, request, spider):
 
-        request.meta['proxy'] = "http://209.182.233.211:4545"
-        proxy_user_pass = "chen:dada"
-        encoded_user_pass = base64.encodestring(proxy_user_pass)
-        request.headers['Proxy-Authorization'] = 'Basic ' + encoded_user_pass
+        # request.meta['proxy'] = "http://209.182.233.211:4545"
+        # proxy_user_pass = "chen:dada"
+        # encoded_user_pass = base64.encodestring(proxy_user_pass)
+        # request.headers['Proxy-Authorization'] = 'Basic ' + encoded_user_pass
         bs = ''
         for i in range(32):
             bs += chr(random.randint(97, 122))
