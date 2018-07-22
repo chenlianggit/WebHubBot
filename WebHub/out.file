@@ -1,0 +1,9 @@
+[33;1myou-get: [error] oops, something went wrong.[0m
+[33;1myou-get: don't panic, c'est la vie. please try the following steps:[0m
+[33;1myou-get:   (1) Rule out any network problem.[0m
+[33;1myou-get:   (2) Make sure you-get is up-to-date.[0m
+[33;1myou-get:   (3) Check if the issue is already known, on[0m
+[33;1myou-get:         https://github.com/soimort/you-get/wiki/Known-Bugs[0m
+[33;1myou-get:         https://github.com/soimort/you-get/issues[0m
+[33;1myou-get:   (4) Run the command with '--debug' option,[0m
+[33;1myou-get:       and report this issue with the full output.[0m

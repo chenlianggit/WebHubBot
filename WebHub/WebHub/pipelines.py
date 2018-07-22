@@ -12,7 +12,7 @@ from items import PornVideoItem
 
 class PornhubMongoDBPipeline(object):
     def __init__(self):
-        clinet = pymongo.MongoClient("localhost", 27000)
+        clinet = pymongo.MongoClient("209.182.233.211", 27000)
         db = clinet["PornHub"]
         self.PhRes = db["PhResHot"]
         idx = IndexModel([('link_url', ASCENDING)], unique=True)

@@ -10,6 +10,7 @@ from scrapy.http import Request
 import re
 import json
 import random
+import time
 
 
 class Spider(CrawlSpider):
@@ -75,6 +76,9 @@ class Spider(CrawlSpider):
         phItem['link_url'] = link_url
         quality_480p = _ph_info_json.get('quality_480p')
         phItem['quality_480p'] = quality_480p
+        phItem['issave']        = 0 #是否本地保存
+        phItem['createtime']    = time.time()
+        phItem['local_mp4_url'] = ''
         print '成功抓取一条'
         # self.item_list.insert_one(phItem)
         # logging.info('duration:' + duration + ' title:' + title + ' image_url:'
