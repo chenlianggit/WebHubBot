@@ -31,5 +31,4 @@ for item in item_list.find({'issave':0}):
     print("----new 开始抓取----")
     url = item['quality_480p']
     host = downmp4(url)
-    time = int(time.time())
-    item_list.update({"quality_480p": url}, { '$set': {"local_mp4_url":host, "issave": 1, "updatetime":time} })
+    item_list.update({"quality_480p": url}, { '$set': {"local_mp4_url":host, "issave": 1, "updatetime":int(time.time())} })
