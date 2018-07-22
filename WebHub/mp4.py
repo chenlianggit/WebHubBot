@@ -22,13 +22,23 @@ def downmp4(url):
             print("----成功抓取一条----")
         if host in line:
             return line
+def get_url():
+    starttime = int(time.time()) - 60 * 60
+    print starttime
+    for item in (item_list.find({'issave': 0, 'createtime': {"$gte": starttime}}).limit(1)):
+        if item['quality_480p']:
+            return item['quality_480p']
+        else:
+            return False
 
 
-
-
-for item in item_list.find({'issave':0}):
-    print(item['quality_480p'])
-    print("----new 开始抓取----")
-    url = item['quality_480p']
-    host = downmp4(url)
-    item_list.update({"quality_480p": url}, { '$set': {"local_mp4_url":host, "issave": 1, "updatetime":int(time.time())} })
+while True:
+    url = get_url()
+    if url:
+        print("----new 开始抓取----")
+        print(url)
+        host = downmp4(url)
+        item_list.update({"quality_480p": url},{'$set': {"local_mp4_url": host, "issave": 1, "updatetime": int(time.time())}})
+    else:
+        print("休息10秒")
+        time.sleep(10)
